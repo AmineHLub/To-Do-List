@@ -1,6 +1,5 @@
-const previousData = JSON.parse(localStorage.getItem('storedTodos'));
-
 export default function updater(number) {
+  const previousData = JSON.parse(localStorage.getItem('storedTodos'));
   const defaultVal = previousData[number].completed;
   let nextVal;
   if (defaultVal === false) {
