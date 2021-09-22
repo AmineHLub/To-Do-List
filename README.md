@@ -16,7 +16,7 @@ This Website is a to-do-list project. A simple as it seems. You have your list o
 
 ## Live Demo
 
-[Live Demo Link](https://aminehlub.github.io/webpack-exercise/)
+[Live Demo Link](https://aminehlub.github.io/webpack-exercise/dist/)
 
 
 ## Getting Started
