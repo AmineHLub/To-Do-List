@@ -70,6 +70,7 @@ main {
   font-size: 1.3rem;
   font-weight: 600;
   font-style: italic;
+  color: rgb(36, 36, 36);
 }
 
 .list-input > input:focus {
