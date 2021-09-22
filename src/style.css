@@ -41,7 +41,6 @@ main {
 .todo-list {
   flex-flow: column nowrap;
   width: 70%;
-  height: 458px;
   box-shadow: 1px 3px 13px -3px rgba(0, 0, 0, 0.75);
   border-radius: 8px;
 }
@@ -100,11 +99,12 @@ main {
 .clear-button {
   justify-content: center;
   align-items: center;
+  height: 5rem;
 }
 
 .clear-button > button {
   width: 100%;
-  height: 6rem;
+  height: 100%;
   font-size: 2rem;
   color: rgb(39, 39, 39);
   border: none;
