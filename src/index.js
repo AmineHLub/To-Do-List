@@ -1,7 +1,7 @@
 import './style.css';
 import trippledotsicon from './assets/3dots.png';
 
-const arrOftodos = [
+let arrOftodos = [
   {
     description: 'template1',
     completed: false,
@@ -17,12 +17,14 @@ const arrOftodos = [
     completed: false,
     index: 2,
   },
-  {
-    description: 'template4',
-    completed: false,
-    index: 3,
-  },
 ];
+
+const previousData = JSON.parse(localStorage.getItem('storedTodos'));
+
+if (!previousData) {
+  localStorage.setItem('storedTodos', JSON.stringify(arrOftodos));
+}
+arrOftodos = previousData;
 
 for (let i = 0; i < arrOftodos.length; i += 1) {
   const item = document.createElement('li');
@@ -33,6 +35,7 @@ for (let i = 0; i < arrOftodos.length; i += 1) {
   document.querySelector('.todo-list-activities > ul').appendChild(item);
   item.appendChild(checkbox);
   checkbox.classList.add('checkbox');
+  checkbox.id = arrOftodos[i].index;
   checkbox.type = 'checkbox';
   item.appendChild(toDo);
   toDo.classList.add('list-items');
@@ -44,4 +47,7 @@ for (let i = 0; i < arrOftodos.length; i += 1) {
   trippleDotsMenu.classList.add('list-menu');
   trippleDotsMenu.appendChild(trippleDotsMenuLogo);
   trippleDotsMenuLogo.src = trippledotsicon;
+  if (arrOftodos[i].completed === true) {
+    checkbox.checked = true;
+  }
 }
