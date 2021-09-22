@@ -1,5 +1,3 @@
-/* eslint-disable no-unused-vars */
-import _, { template } from 'lodash';
 import './style.css';
 import trippledotsicon from './assets/3dots.png';
 
