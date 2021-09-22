@@ -66,10 +66,17 @@ main {
   height: 80%;
   border: none;
   margin: 1%;
-  padding: 0 2% 0 1%;
+  padding: 0 7% 0 1%;
   font-size: 1.3rem;
   font-weight: 600;
   font-style: italic;
+}
+
+.list-input > input:focus {
+  background-image: url('assets/enter.png');
+  background-repeat: no-repeat;
+  background-position: 98% 50%;
+  background-size: 15px 15px;
 }
 
 .todo-list-activities > ul > li {
