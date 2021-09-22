@@ -1,5 +1,6 @@
 import './style.css';
 import trippledotsicon from './assets/3dots.png';
+import updater from './status.js';
 
 let arrOftodos = [
   {
@@ -23,8 +24,9 @@ const previousData = JSON.parse(localStorage.getItem('storedTodos'));
 
 if (!previousData) {
   localStorage.setItem('storedTodos', JSON.stringify(arrOftodos));
+} else {
+  arrOftodos = previousData;
 }
-arrOftodos = previousData;
 
 for (let i = 0; i < arrOftodos.length; i += 1) {
   const item = document.createElement('li');
@@ -50,4 +52,10 @@ for (let i = 0; i < arrOftodos.length; i += 1) {
   if (arrOftodos[i].completed === true) {
     checkbox.checked = true;
   }
+}
+
+for (let i = 0; i < previousData.length; i += 1) {
+  document
+    .getElementById(`${i}`)
+    .addEventListener('change', updater.bind(null, i), false);
 }
