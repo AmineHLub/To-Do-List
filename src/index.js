@@ -10,7 +10,7 @@ let arrOftodos = [
   },
   {
     description: 'template2',
-    completed: false,
+    completed: true,
     index: 1,
   },
   {
@@ -54,7 +54,7 @@ for (let i = 0; i < arrOftodos.length; i += 1) {
   }
 }
 
-for (let i = 0; i < previousData.length; i += 1) {
+for (let i = 0; i < arrOftodos.length; i += 1) {
   document
     .getElementById(`${i}`)
     .addEventListener('change', updater.bind(null, i), false);
