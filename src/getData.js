@@ -1,4 +1,5 @@
 import trippledotsicon from './assets/3dots.png';
+import deleteIcon from './assets/delete.png';
 
 export default function getData() {
   let arrOftodos = [
@@ -36,7 +37,7 @@ export default function getData() {
     document.querySelector('.todo-list-activities > ul').appendChild(item);
     item.appendChild(checkbox);
     checkbox.classList.add('checkbox');
-    checkbox.id = arrOftodos[i].index;
+    item.id = arrOftodos[i].index;
     checkbox.type = 'checkbox';
     item.appendChild(toDo);
     toDo.classList.add('list-items');
@@ -50,6 +51,7 @@ export default function getData() {
     trippleDotsMenuLogo.src = trippledotsicon;
     if (arrOftodos[i].completed === true) {
       checkbox.checked = true;
+      document.querySelector(`#\\${i + 30} > a > img`).src = deleteIcon;
     }
   }
 }

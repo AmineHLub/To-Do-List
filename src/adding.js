@@ -18,7 +18,7 @@ export default function addingNewTodos() {
   document.querySelector('.todo-list-activities > ul').appendChild(item);
   item.appendChild(checkbox);
   checkbox.classList.add('checkbox');
-  checkbox.id = previousData.length;
+  item.id = previousData.length;
   checkbox.type = 'checkbox';
   item.appendChild(toDo);
   toDo.classList.add('list-items');
