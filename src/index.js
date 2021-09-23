@@ -9,7 +9,7 @@ getData();
 document.querySelector('.list-input > input').addEventListener('keypress', (e) => {
   if (e.key === 'Enter') {
     addingNewTodos();
-    document.getElementById(`${JSON.parse(localStorage.getItem('storedTodos')).length - 1}`).addEventListener('change', updater.bind(null, JSON.parse(localStorage.getItem('storedTodos')).length - 1), false);
+    document.querySelector(`#\\${JSON.parse(localStorage.getItem('storedTodos')).length - 1 + 30} > .checkbox`).addEventListener('change', updater.bind(null, JSON.parse(localStorage.getItem('storedTodos')).length - 1), false);
   }
 });
 

@@ -1,4 +1,5 @@
 import trippledotsicon from './assets/3dots.png';
+import updaterInput from './updater.js';
 
 class Todos {
   constructor(description, index) {
@@ -32,4 +33,5 @@ export default function addingNewTodos() {
   trippleDotsMenuLogo.src = trippledotsicon;
   previousData.push(new Todos(document.querySelector('.list-input > input').value, previousData.length));
   localStorage.setItem('storedTodos', JSON.stringify(previousData));
+  document.querySelector(`#\\${30 + previousData.length - 1} > .list-items`).addEventListener('click', updaterInput.bind(null, 30 + previousData.length - 1), false);
 }
