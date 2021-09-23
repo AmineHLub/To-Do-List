@@ -1,61 +1,24 @@
 import './style.css';
-import trippledotsicon from './assets/3dots.png';
+import getData from './getData.js';
 import updater from './status.js';
+import addingNewTodos from './adding.js';
+import updaterInput from './updater.js';
+import removeOrDrug from './singleDeleteAndDrug.js';
+import removeAll from './removeAll.js';
 
-let arrOftodos = [
-  {
-    description: 'template1',
-    completed: false,
-    index: 0,
-  },
-  {
-    description: 'template2',
-    completed: true,
-    index: 1,
-  },
-  {
-    description: 'template3',
-    completed: false,
-    index: 2,
-  },
-];
+getData();
 
-const previousData = JSON.parse(localStorage.getItem('storedTodos'));
-
-if (!previousData) {
-  localStorage.setItem('storedTodos', JSON.stringify(arrOftodos));
-} else {
-  arrOftodos = previousData;
-}
-
-for (let i = 0; i < arrOftodos.length; i += 1) {
-  const item = document.createElement('li');
-  const checkbox = document.createElement('input');
-  const toDo = document.createElement('input');
-  const trippleDotsMenu = document.createElement('a');
-  const trippleDotsMenuLogo = document.createElement('img');
-  document.querySelector('.todo-list-activities > ul').appendChild(item);
-  item.appendChild(checkbox);
-  checkbox.classList.add('checkbox');
-  checkbox.id = arrOftodos[i].index;
-  checkbox.type = 'checkbox';
-  item.appendChild(toDo);
-  toDo.classList.add('list-items');
-  toDo.classList.add('noborder-input');
-  toDo.type = 'text';
-  toDo.value = arrOftodos[i].description;
-  toDo.disabled = true; // must double click to modify
-  item.appendChild(trippleDotsMenu);
-  trippleDotsMenu.classList.add('list-menu');
-  trippleDotsMenu.appendChild(trippleDotsMenuLogo);
-  trippleDotsMenuLogo.src = trippledotsicon;
-  if (arrOftodos[i].completed === true) {
-    checkbox.checked = true;
+document.querySelector('.list-input > input').addEventListener('keypress', (e) => {
+  if (e.key === 'Enter') {
+    addingNewTodos();
+    document.querySelector(`#\\${JSON.parse(localStorage.getItem('storedTodos')).length - 1 + 30} > .checkbox`).addEventListener('change', updater.bind(null, JSON.parse(localStorage.getItem('storedTodos')).length - 1), false);
   }
+});
+
+for (let i = 0; i < JSON.parse(localStorage.getItem('storedTodos')).length; i += 1) {
+  document.querySelector(`#\\${i + 30} > .checkbox`).addEventListener('change', updater.bind(null, i), false);
+  document.querySelector(`#\\${i + 30} > .list-items`).addEventListener('click', updaterInput.bind(null, i + 30), false);
+  document.querySelector(`#\\${i + 30} > .list-menu`).addEventListener('click', removeOrDrug.bind(null, i + 30), false);
 }
 
-for (let i = 0; i < arrOftodos.length; i += 1) {
-  document
-    .getElementById(`${i}`)
-    .addEventListener('change', updater.bind(null, i), false);
-}
+document.querySelector('.clear-button > button').addEventListener('click', removeAll);

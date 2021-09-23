@@ -98,10 +98,12 @@ main {
   font-size: 1.3rem;
   font-weight: bold;
   color: rgb(59, 59, 59);
+  cursor: pointer;
 }
 
 .list-menu > img {
   width: 70%;
+  cursor: pointer;
 }
 
 .clear-button {
@@ -120,6 +122,11 @@ main {
   padding: 0;
   cursor: pointer;
   background-color: rgb(221, 221, 221);
+}
+
+.clear-button > button:hover {
+  background-color: rgb(160, 13, 13);
+  color: rgb(228, 228, 228);
 }
 
 .noborder-input:focus {
