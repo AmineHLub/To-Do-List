@@ -9,7 +9,4 @@ export default function removeOrDrug(number) {
     }
     localStorage.setItem('storedTodos', JSON.stringify(previousData));
   }
-  // else {
-  // do drag function
-  // }
 }

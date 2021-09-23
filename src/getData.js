@@ -2,23 +2,7 @@ import trippledotsicon from './assets/3dots.png';
 import deleteIcon from './assets/delete.png';
 
 export default function getData() {
-  let arrOftodos = [
-    {
-      description: 'template1',
-      completed: false,
-      index: 0,
-    },
-    {
-      description: 'template2',
-      completed: false,
-      index: 1,
-    },
-    {
-      description: 'template3',
-      completed: false,
-      index: 2,
-    },
-  ];
+  let arrOftodos = [];
 
   const previousData = JSON.parse(localStorage.getItem('storedTodos'));
 
