@@ -98,6 +98,7 @@ main {
   font-size: 1.3rem;
   font-weight: bold;
   color: rgb(59, 59, 59);
+  cursor: pointer;
 }
 
 .list-menu > img {

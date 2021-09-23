@@ -44,7 +44,7 @@ export default function getData() {
     toDo.classList.add('noborder-input');
     toDo.type = 'text';
     toDo.value = arrOftodos[i].description;
-    toDo.disabled = true; // must double click to modify
+    toDo.readOnly = true; // must double click to modify
     item.appendChild(trippleDotsMenu);
     trippleDotsMenu.classList.add('list-menu');
     trippleDotsMenu.appendChild(trippleDotsMenuLogo);
