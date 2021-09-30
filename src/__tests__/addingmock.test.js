@@ -6,7 +6,7 @@ describe('Test adding functions', () => {
     expect(addingNewTodos(page.window.document.querySelector('body > div > input').value)[0].description)
       .toBe('test');
   });
-  
+
   test('Adding to html doesnt work!', () => {
     addingNewTodos('anyvalue');
     expect(page.window.document.querySelectorAll('body > div')[1].innerText)
@@ -14,4 +14,4 @@ describe('Test adding functions', () => {
     expect(page.window.document.querySelectorAll('body > div')[1].id)
       .toEqual('0');
   });
-})
+});
