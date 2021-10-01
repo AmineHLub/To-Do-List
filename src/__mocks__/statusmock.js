@@ -1,6 +1,6 @@
-const ls = require('./ls.js');
+const Ls = require('./ls.js');
 
-const localstorage = new ls();
+const localstorage = new Ls();
 
 // dummyArroftodos
 const dummyArrofTodos = [
