@@ -3,7 +3,6 @@ const pageDel = require('./mockhtmlToDelete.js');
 
 const fakeLocalStorage = new FakeLocalStorage();
 
-// dummyArroftodos
 const dummyArrofTodos = [
   {
     description: 'dummy todo 1',
@@ -21,7 +20,7 @@ const dummyArrofTodos = [
     index: 2,
   },
 ];
-// store the array in fake localstorage
+
 fakeLocalStorage.setItem(dummyArrofTodos);
 
 function removeAll() {

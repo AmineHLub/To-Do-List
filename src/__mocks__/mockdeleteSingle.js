@@ -21,7 +21,7 @@ const dummyArrofTodos = [
     index: 2,
   },
 ];
-// store the array in fake localstorage
+
 fakeLocalStorage.setItem(dummyArrofTodos);
 
 function removeOrDrug(number) {
