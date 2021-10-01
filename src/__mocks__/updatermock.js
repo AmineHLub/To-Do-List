@@ -3,7 +3,6 @@ const updaterPage = require('./mockhtmlToDelete.js');
 
 const localstorage = new Ls();
 
-// dummyArroftodos
 const dummyArrofTodos = [
   {
     description: 'dummy todo 1',
@@ -21,7 +20,7 @@ const dummyArrofTodos = [
     index: 2,
   },
 ];
-// store the array in fake localstorage
+
 localstorage.setItem(dummyArrofTodos);
 
 function updateValue(number, desc) {

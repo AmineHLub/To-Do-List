@@ -34,6 +34,11 @@ To get a local copy up and running follow these simple example steps.
 
 **Run** git clone https://github.com/AmineHLub/webpack-exercise.git
 
+**Test**
+npm i jest
+
+### Test
+npm run test 
 
 ## Authors
 
