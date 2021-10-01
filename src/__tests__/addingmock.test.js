@@ -7,7 +7,7 @@ test('Adding doesnt work!', () => {
 });
 
 test('Adding to html doesnt work!', () => {
-  addingNewTodos('anyval');
+  addingNewTodos('anyvalue');
   expect(page.window.document.querySelectorAll('body > div')[1].innerText)
     .toBe('false');
   expect(page.window.document.querySelectorAll('body > div')[1].id)
